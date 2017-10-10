@@ -1,8 +1,8 @@
 name: ubuntu-for-ci
-description: "Build environment for our projects on CircleCI"
+description: "Base Ubuntu image for our projects on CircleCI"
 
 long_description: |
-  This project provides a build environment for our projects on CircleCI.
+  This project provides a build environment with Ubuntu for our projects on CircleCI.
 
   It provides:
 

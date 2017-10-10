@@ -2,7 +2,7 @@
 
 # Docker image for Ubuntu used for continuous builds
 
-Base image to use when building and testing projects in continuous integration (e.g. [CircleCI](https://circleci.com)).
+Base Ubuntu image to use when building and testing projects in continuous integration (e.g. [CircleCI](https://circleci.com)).
 
 ## Introduction
 
