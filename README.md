@@ -28,7 +28,7 @@ jobs:
   build:
     working_directory: ~/src
     docker:
-      - image: hbpmip/ubuntu-for-ci:16.04-0
+      - image: hbpmip/ubuntu-for-ci:16.04-1
     environment:
        - CIRCLECI: true
     steps:
