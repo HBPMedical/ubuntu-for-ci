@@ -1,0 +1,7 @@
+target_image:
+  build: Dockerfile
+  image: hbpmip/ubuntu-for-ci
+  pre:
+    - echo "Building hbpmip/ubuntu-for-ci image"
+  post:
+    - echo "Finished building hbpmip/ubuntu-for-ci image"
