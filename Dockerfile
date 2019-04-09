@@ -2,10 +2,6 @@ FROM ubuntu:16.04
 
 MAINTAINER ludovic.claude@chuv.ch
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG VERSION
-
 ########################################################################################################################
 # Install build requirements
 ########################################################################################################################
@@ -19,7 +15,7 @@ RUN apt-get update \
     && addgroup tester \
     && adduser --quiet --system --disabled-password --group tester \
     && adduser tester sudo \
-    && pip install pre-commit==1.3.0 ansible-lint \
+    && pip install pre-commit==1.14.3 ansible-lint \
     && mkdir -p /home/tester/Desktop \
     && chmod -R u+rwX /home/tester/Desktop \
     && export GOSU_VERSION=1.10 \
@@ -41,13 +37,17 @@ RUN apt-get update \
     && mkdir -p /var/cache/apt/archives/partial \
     && echo -n > /var/lib/apt/extended_states
 
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="hbpmip/ubuntu-for-ci" \
       org.label-schema.description="Ubuntu for continuous integration build" \
       org.label-schema.url="https://github.com/HBPMedical/ubuntu-for-ci" \
       org.label-schema.vcs-type="git" \
       org.label-schema.vcs-url="https://github.com/HBPMedical/ubuntu-for-ci" \
-      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-ref="$VCS_REF" \
       org.label-schema.version="$VERSION" \
       org.label-schema.vendor="LREN CHUV" \
       org.label-schema.license="Apache2.0" \
