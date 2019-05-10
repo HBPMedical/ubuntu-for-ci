@@ -15,7 +15,7 @@ RUN apt-get update \
     && addgroup tester \
     && adduser --quiet --system --disabled-password --group tester \
     && adduser tester sudo \
-    && pip install pre-commit==1.14.3 ansible-lint \
+    && pip install pre-commit==1.15.1 ansible-lint \
     && mkdir -p /home/tester/Desktop \
     && chmod -R u+rwX /home/tester/Desktop \
     && export GOSU_VERSION=1.10 \
